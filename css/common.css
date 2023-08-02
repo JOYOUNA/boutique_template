@@ -28,3 +28,34 @@
   --el-title: 2.5rem;
  }
  
+/********** Common Stlye **********/
+.wrapper{
+  width: 100%;
+  height:auto;
+  
+ }
+
+ .page-interval{
+  padding: 0 1.25rem;
+ }
+
+ .narrow-center{
+  width:100%;
+  max-width:980px;
+  margin:auto;
+  height:auto;
+ }
+
+ .wide-center{
+  width:100%;
+  max-width:980px;
+  margin:auto;
+  height:auto;
+ }
+
+ .section-padding{
+ padding: var(--el-section) 0;
+ }
+
+
+ 
