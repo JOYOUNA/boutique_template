@@ -6,6 +6,12 @@ const btnObj = { // DOM 컨트롤 클래스 요소 객체 정의
   bArrow: '.black', //검은색 화살표 요소
 };
 
+const swiperObj = { 
+  CommonBtn: '.swiper-navigation div', //버튼 요소
+  wArrow : '.arrow-white', // 흰색 화살표 요소
+  bArrow: '.arrow-black', //검은색 화살표 요소
+}
+
 // 호버시 화살표 색상 교체 함수 정의
 function btnHoverRffect(obj){
  const HoverBtn = document.querySelectorAll(obj.CommonBtn)
@@ -28,6 +34,7 @@ function btnHoverRffect(obj){
 }
 
 btnHoverRffect(btnObj) //함수 호출
+btnHoverRffect(swiperObj) //함수 호출
 
 
 
