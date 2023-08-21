@@ -15,7 +15,7 @@ const swiperObj = {
 // 호버시 화살표 색상 교체 함수 정의
 function btnHoverRffect(obj){
  const HoverBtn = document.querySelectorAll(obj.CommonBtn)
- console.log(HoverBtn)
+//  console.log(HoverBtn)
   HoverBtn.forEach((btn)=> {
    const wArrow= btn.querySelector(obj.wArrow)
    const bArrow= btn.querySelector(obj.bArrow)
@@ -52,3 +52,44 @@ const swiper = new Swiper('.swiper', {
 
  
 });
+
+
+//mobile header toggle active
+// 1. 아이콘 클릭 --> 2. 아이콘에 'on' 클래스 추가 (toggle) --> 3. 네비게이션 높이 저장 --> 4. 'on'클래스가 있을 때 네비게이션 활성화 -->5. 'on' 클래스가 없을 때 네비게이션 바 활성화
+
+const manuIcon = document.querySelector('.menu-icon'); //메뉴 아이콘 요소 저장
+const navi = document.querySelector('.navi'); // 네비게이션 박스 요소 저장
+
+// console.log('manuIcon', manuIcon);
+// console.log('navi', navi);
+
+manuIcon.addEventListener('click', function () {
+// console. log(this);
+this.classList.toggle('on');//menu-icon 클릭 할 떄마다 on클래스 추가 및 제거
+
+const navHeight = navi.scrollHeight; // navi박스의 자식 요소를 포함한 높이 
+// console. log(navHeight);
+
+if(this.classList.contains('on')){
+  // console. log(true); //menu-icon에 on클래가 있다면
+  navi.style.height = navHeight + 'px';
+} else {
+  // console. log(false); //menu-icon에 on클래가 없다면
+  navi.style.height = 0;
+
+}
+});
+
+//IF PC size browser, navigation height to normal
+window.addEventListener('resize', function () {
+  const winWidth = this.window.outerWidth; //윈도우 화면 가로 사이즈 저장
+  
+  if(winWidth >  980){
+    manuIcon.classList.remove('on')
+    navi.style.height = 'auto';
+
+  }else{
+    navi.style.height = 0;
+  }
+});
+
