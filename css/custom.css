@@ -544,6 +544,7 @@ line-height: 150%;
   margin-top: 2.5rem;
   display: flex;
   column-gap: 1.875rem;
+  flex-wrap:wrap;
  }
 
  .category .category-list{
